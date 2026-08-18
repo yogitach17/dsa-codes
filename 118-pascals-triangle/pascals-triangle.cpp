@@ -2,20 +2,20 @@ class Solution {
 public:
     vector<vector<int>> generate(int numRows) {
 
-        vector<vector<int>> result;              // ✅ You derived this
+        vector<vector<int>> result;              
 
-        for (int i = 0; i < numRows; i++) {      // ✅ You got i=0
+        for (int i = 0; i < numRows; i++) {      
 
-            vector<int> row(i + 1);              // We derived i+1
+            vector<int> row(i + 1);              
 
-            row[0] = 1;                          // ✅ You got this
-            row[i] = 1;                          // You derived size-1 → i
+            row[0] = 1;                          
+            row[i] = 1;                          
 
-            for (int j = 1; j < i; j++) {        // We derived this
+            for (int j = 1; j < i; j++) {        
                 row[j] = result[i-1][j-1] + result[i-1][j];
             }
 
-            result.push_back(row);               // Last missing line
+            result.push_back(row);               
         }
 
         return result;
